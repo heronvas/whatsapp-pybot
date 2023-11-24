@@ -1,17 +1,24 @@
-from typing import Union
-
+###from typing import Union
 from fastapi import FastAPI, Request, HTTPException
 import requests
 import json
+
+
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 app = FastAPI()
 
 
 
-api_tokens = "EAAMWe6pU9xcBO77rx4DfKWWQ7CwULddJ2dbthiEDiKwgoZBwCCW6w27npYOIDYzeDZCrAvhLHcOeiTglkrPLG39Ww1kn8upWZAbI52jDDWptFiVZB6TjjT1UjLc5UghYZCQRCEZBBDaTVlFYIS0kAmZArEZAaHvSzfgy0FLQzHLeeUoc9tgYypkUEZBGWZA5k5qP1ZCp9o6RyEcDv6xJi1sj8UZD"
+api_tokens = os.getenv('TOKEN')
  ##api token is used in header to send the reply the user###
 
-my_token = "" ### the token whitelisted on the whatsapp dashboard while configuring the API link created after deploying the code 
+my_token = os.getenv('MYTOKEN')### the token whitelisted on the whatsapp dashboard while configuring the API link created after deploying the code 
 
 
 
